@@ -6,3 +6,6 @@
   Bench.create({ description: 'the rolls royce of benches.', lat: '37.799773', lng: '-122.400827'})
   Bench.create({ description: 'chinatown bench', lat: '37.793397', lng: '-122.408209'})
   Bench.create({ description: 'japantown area bench', lat: '37.785529', lng: '-122.428808'})
+  Bench.create({ description: 'Ellis Brooks Bench', lat: '37.788173', lng: '-122.422702'})
+  Bench.create({ description: 'Jackson St. Bench', lat: '37.795237', lng: '-122.413179'})
+  Bench.create({ description: 'Prestido Park Bench', lat: '37.794568', lng: '-122.461488'})

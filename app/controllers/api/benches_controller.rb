@@ -6,6 +6,7 @@ class Api::BenchesController < ApplicationController
       "southWest"=> {"lat"=>"37.74187", "lng"=>"-122.47791"}
       }
     @benches = Bench.in_bounds(bounds)
+    @benches = Bench.in_bounds(params[:bounds]) unless params[:bounds].nil?
     render json: @benches.to_json
   end
 
