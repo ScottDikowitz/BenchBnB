@@ -15,9 +15,10 @@
   BenchStore.addChangeListener = function(callback){
       this.on(CHANGE_EVENT, callback);
     };
-    BenchStore.removeChangeListener = function(callback){
-      this.removeListener(CHANGE_EVENT, callback);
-    };
+  BenchStore.removeChangeListener = function(callback){
+    this.removeListener(CHANGE_EVENT, callback);
+  };
+  
 
   BenchStore.dispatcherID = AppDispatcher.register(function(payload){
       if(payload.actionType === BenchConstants.BENCHES_RECEIVED){

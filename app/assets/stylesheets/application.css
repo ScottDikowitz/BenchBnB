@@ -13,17 +13,20 @@
  *= require_tree .
  *= require_self
  */
-
-
+h1{
+  margin: auto;
+}
 
 .map{
   width: 500px;
   height: 500px;
   margin: auto;
-  background: black;
+  border: 2px solid black;
+
 }
 
 body{
+  text-align: center;
   background: lightgrey;
   font-family: sans-serif;
   font-size: 25px;
