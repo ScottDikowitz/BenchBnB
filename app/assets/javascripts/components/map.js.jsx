@@ -39,7 +39,12 @@ var Map = React.createClass ({
           map: this.map
         }));
   }.bind(this));
+
+
+    setTimeout(function(){ ApiActions.receiveAllMarks(this.state.marks);}.bind(this), 1);
+
   this.setState({marks: tempMarks});
+
   },
 
   render: function(){

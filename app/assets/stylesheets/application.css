@@ -24,16 +24,15 @@ ul, body, li{
 
 }
 h1{
-  margin: auto;
+  margin: 15px auto 0 0;
   text-align: center;
 }
 
 .map{
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  height: 480px;
   margin: auto;
   border: 2px solid black;
-
 }
 
 body{
@@ -46,7 +45,7 @@ body{
 .bench-names{
   border: 2px solid black;
   background: lightblue;
-  width: 500px;
+  width: 700px;
   height: 200px;
   margin: 15px auto;
   overflow-y: scroll;
@@ -66,4 +65,7 @@ body{
   content: "Benches:";
   background: grey;
   display: block;
+}
+.bench-names > li.mouseover{
+  background: red;
 }
