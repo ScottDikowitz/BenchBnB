@@ -29,15 +29,15 @@ var Map = React.createClass ({
 
   _changed: function(){
     this.state.marks.forEach(function(marker){
-      return marker.setMap(null);
+      marker.setMap(null);
     });
     var tempMarks = [];
 
     BenchStore.all().forEach(function(bench){
       tempMarks.push(new google.maps.Marker({
-      position: {lat: bench.lat, lng: bench.lng},
-      map: this.map
-    }));
+          position: {lat: bench.lat, lng: bench.lng},
+          map: this.map
+        }));
   }.bind(this));
   this.setState({marks: tempMarks});
   },

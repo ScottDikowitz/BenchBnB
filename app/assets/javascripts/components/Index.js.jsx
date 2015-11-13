@@ -11,7 +11,16 @@ var Index = React.createClass ({
     this.setState({benches: BenchStore.all()});
   },
 
+  handleHover: function(e){
+    e.currentTarget;
+  },
   render: function(){
-    return <div>{this.state.benches}</div>;
+    return <div>
+    <ul className="bench-names">
+    {this.state.benches.map(function(bench){
+        return <li key={bench.id} onMouseOver={this.handleHover} >{bench.description}</li>;
+      })}
+      </ul>
+        </div>;
   }
 });
