@@ -3,5 +3,6 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  Bench.create({ description: 'the rolls royce of benches.', lat: '37.799773', lng: '-122.400827'})
+  Bench.create({ description: 'chinatown bench', lat: '37.793397', lng: '-122.408209'})
+  Bench.create({ description: 'japantown area bench', lat: '37.785529', lng: '-122.428808'})
