@@ -5,6 +5,10 @@ var BenchShow = React.createClass ({
     ApiUtil.fetchSingleBench(this.props.params.benchId);
   },
 
+  componentWillDismount: function(){
+    BenchStore.removeChangeListener(this._changed);
+  },
+
   _changed: function(){
     this.setState({thisBench: BenchStore.all()[0]});
   },
