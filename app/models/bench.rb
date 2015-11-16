@@ -4,7 +4,7 @@ class Bench < ActiveRecord::Base
 
   def self.in_bounds(filter)
     # bounds = filter.
-    bounds = filter["mapBounds"]
+    bounds = filter["bounds"]
     in_bound_benches = Bench.find_by_sql([<<-SQL, bounds["southWest"]["lat"], bounds["southWest"]["lng"], bounds["northEast"]["lng"], bounds["northEast"]["lat"], filter["min"], filter["max"]])
 
       SELECT

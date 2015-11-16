@@ -24,14 +24,14 @@ var ApiUtil = window.ApiUtil = {
     });
 
   },
-  filterBenches: function(bounds){
+  filterBenches: function(filter){
     $.ajax ({
       url: 'api/benches',
       type: 'GET',
       dataType: 'json',
-      data: {bounds: bounds},
+      data: {bounds: filter},
       success: function(data) {
-        FilterActions.applyFilter(data);
+        ApiActions.receiveAll(data);
       }
     });
   },

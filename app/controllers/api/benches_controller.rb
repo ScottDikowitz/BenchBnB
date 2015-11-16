@@ -5,7 +5,6 @@ class Api::BenchesController < ApplicationController
   end
 
   def create
-    # byebug
     @bench = Bench.create(bench_params)
     if @bench
       render json: @bench.to_json

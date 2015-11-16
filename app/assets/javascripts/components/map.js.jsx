@@ -24,8 +24,9 @@ var Map = React.createClass ({
                       };
       // ApiUtil.fetchBenches(mapBounds);
       // debugger;
-      var filter = {mapBounds: mapBounds, min: 1, max: 12};
-      ApiUtil.filterBenches(filter);
+      // var filter = {mapBounds: mapBounds, min: 1, max: 12};
+      FilterActions.setBounds(mapBounds);
+      // ApiUtil.filterBenches(filter);
       });
 
       this.map.addListener('click', function(e){
