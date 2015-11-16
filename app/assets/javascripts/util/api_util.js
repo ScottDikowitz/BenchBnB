@@ -12,6 +12,18 @@ var ApiUtil = window.ApiUtil = {
     });
   },
 
+  fetchSingleBench: function(benchId){
+    //make an api call using AJAX in here
+    $.ajax ({
+      url: 'api/benches/' + benchId,
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        ApiActions.receiveSingleBench(data);
+      }
+    });
+  },
+
   createBench: function(bench){
     $.ajax ({
       url: 'api/benches',

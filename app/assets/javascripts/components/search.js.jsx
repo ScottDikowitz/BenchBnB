@@ -25,7 +25,7 @@ var Search = React.createClass ({
     return <div>
             <Map clickMapHandler={this.clickMapHandler}/>
             <FilterSeating/>
-            <Index/>
+            <Index history={this.props.history}/>
           </div>;
         }
 

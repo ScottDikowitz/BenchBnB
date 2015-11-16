@@ -5,13 +5,18 @@
   var CHANGE_EVENT = 'CHANGE';
   var BenchStore = window.BenchStore = $.extend( {},  EventEmitter.prototype);
   BenchStore.all = function(){
-      //return a shallow copy so consumer cannot mutate original
-      return _benches.slice(0);
+    //return a shallow copy so consumer cannot mutate original
+    return _benches.slice(0);
+  };
+
+  BenchStore.find = function(id){
+    debugger;
+    return _benches[id];
   };
 
   BenchStore.allMarks = function(){
-      //return a shallow copy so consumer cannot mutate original
-      return _marks.slice(0);
+    //return a shallow copy so consumer cannot mutate original
+    return _marks.slice(0);
   };
 
   BenchStore.resetBenches = function(benches){
@@ -32,6 +37,10 @@
         BenchStore.emit(CHANGE_EVENT);
       }
       else if (payload.actionType === BenchConstants.CREATE_BENCH){
+        _benches.push(payload.bench);
+        BenchStore.emit(CHANGE_EVENT);
+      }
+      else if (payload.actionType === "SINGLE_BENCH"){
         _benches.push(payload.bench);
         BenchStore.emit(CHANGE_EVENT);
       }

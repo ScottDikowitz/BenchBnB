@@ -17,6 +17,7 @@
   });
   var routes = (
       <Route path="/" component={App}>
+      <Route path="benches/:benchId" component={BenchShow}/>
         <IndexRoute component={Search}/>
         <route path="/benches/new" component={BenchForm}/>
       </Route>

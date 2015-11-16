@@ -4,6 +4,12 @@ class Api::BenchesController < ApplicationController
     render json: @benches.to_json
   end
 
+  def show
+    # byebug
+    @bench = Bench.find(params[:id])
+    render json: @bench.to_json
+  end
+
   def create
     @bench = Bench.create(bench_params)
     if @bench

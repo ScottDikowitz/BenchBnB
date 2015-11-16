@@ -5,7 +5,6 @@ var BenchForm = React.createClass ({
 
   handleSubmit: function(e){
     e.preventDefault();
-    debugger;
     ApiUtil.createBench({lat: e.currentTarget[0].value, lng: e.currentTarget[1].value, description: e.currentTarget[2].value, seating: parseInt(e.currentTarget[3].value)});
     this.props.history.pushState(null, "/");
   },

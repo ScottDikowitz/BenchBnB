@@ -27,6 +27,12 @@ var Index = React.createClass ({
     MarkStore.all()[parseInt(e.currentTarget.dataset.idx)].setAnimation(google.maps.Animation.BOUNCE);
   },
 
+  clickHandler: function(e){
+    // debugger;
+    this.props.history.pushState(null, "/benches/" + e.currentTarget.dataset.benchid);
+    // e.currentTarget.dataset.idx;
+  },
+
   handleExit: function(e){
     $(e.currentTarget).toggleClass("mouseover");
     // debugger;
@@ -38,7 +44,7 @@ var Index = React.createClass ({
     return <div>
     <ul className="bench-names">
     {this.state.benches.map(function(bench, idx){
-        return <li data-idx={idx} key={bench.id} onMouseOver={that.handleHover} onMouseOut={that.handleExit}>{bench.description}</li>;
+        return <li onClick={that.clickHandler} data-idx={idx} data-benchid={bench.id} key={bench.id} onMouseOver={that.handleHover} onMouseOut={that.handleExit}>{bench.description}</li>;
       })}
       </ul>
         </div>;
