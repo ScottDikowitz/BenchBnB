@@ -1,10 +1,13 @@
 var Search = React.createClass ({
 
-  render: function(){
+  clickMapHandler: function(coords){
+    // this.props.history
+    this.props.history.pushState(null, "/benches/new", coords);
+  },
 
+  render: function(){
     return <div>
-            <Map/>
-            <BenchForm/>
+            <Map clickMapHandler={this.clickMapHandler}/>
             <Index/>
           </div>;
         }

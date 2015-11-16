@@ -1,40 +1,37 @@
 var BenchForm = React.createClass ({
   getInitialState: function(){
-    return {lat: "", lng: ""};
+    return {lat: this.props.location.query.lat, lng: this.props.location.query.lng};
   },
 
   handleSubmit: function(e){
     e.preventDefault();
     ApiUtil.createBench({lat: e.currentTarget[0].value, lng: e.currentTarget[1].value, description: e.currentTarget[2].value});
+    this.props.history.pushState(null, "/");
   },
 
   updateLat: function(e){
-    // this.setState({lat: });
+    this.setState({lat: e.currentTarget[0]});
   },
 
-  updateLng: function(){
-
+  updateLng: function(e){
+    this.setState({lng: e.currentTarget[1]});
   },
 
-  updateDes: function(){
-
-  },
 
   render: function(){
     return <div className="create-bench-form">
               <form onSubmit={this.handleSubmit}>
                 <label>lat
-                <input type="text"/>
+                <input type="text" value={this.state.lat} onChange={this.updateLat}/>
                 </label>
                 <label>lng
-                <input type="text"/>
+                <input type="text" value={this.state.lng} onChange={this.updateLng}/>
                 </label>
                 <label>description
                 <textarea></textarea>
                 </label>
                 <input type="submit" value="post"/>
               </form>
-
           </div>;
 
   }

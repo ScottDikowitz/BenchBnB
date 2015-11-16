@@ -8,6 +8,11 @@ var Index = React.createClass ({
     MarkStore.addChangeListener(this._changedMark);
   },
 
+  componentWillUnmount: function(){
+    BenchStore.removeChangeListener(this._changed);
+    MarkStore.removeChangeListener(this._changedMark);
+  },
+
   _changedMark: function(){
     this.setState({marks: MarkStore.all()});
 

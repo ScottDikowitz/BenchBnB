@@ -1,4 +1,5 @@
 var Map = React.createClass ({
+  // mixins: [ReactRouter.History],
 
   getInitialState: function(){
     return {marks: []};
@@ -27,11 +28,15 @@ var Map = React.createClass ({
       this.map.addListener('click', function(e){
         var lat = e.latLng.lat();
         var lng = e.latLng.lng();
-        debugger;
-
-      });
+        var latLng = {lat: lat, lng: lng};
+        this.props.clickMapHandler(latLng);
+      }.bind(this));
 
     BenchStore.addChangeListener(this._changed);
+  },
+
+  componentWillUnmount: function(){
+    BenchStore.removeChangeListener(this._changed);
   },
 
   _changed: function(){
