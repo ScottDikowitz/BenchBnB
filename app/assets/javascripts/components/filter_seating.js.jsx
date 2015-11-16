@@ -15,6 +15,7 @@ var FilterSeating = React.createClass ({
 
   render: function(){
     return <div className="filter">
+            <span>Filter</span>
             <label>Min:
             <input type="text" value={this.state.min} onChange={this.minChange}/>
             </label>

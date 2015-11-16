@@ -25,7 +25,9 @@ var BenchShow = React.createClass ({
 
     }
     // var thisBench = BenchStore.all()[0];
-    return <div>{bench}</div>;
+    return <div>{bench}
+            <Map/>
+          </div>;
   }
 
 });

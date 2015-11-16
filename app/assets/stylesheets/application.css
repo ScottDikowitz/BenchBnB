@@ -79,7 +79,14 @@ body{
 }
 
 .filter {
-  text-align: center;
+  margin: 10px auto;
+  width: 370px;
+}
+
+.filter > span {
+  display: block;
+  color: white;
+  background: blue;
 }
 
 .create-bench-form > form textarea{
