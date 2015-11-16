@@ -21,7 +21,7 @@ var BenchForm = React.createClass ({
   },
 
   render: function(){
-    return <div>
+    return <div className="create-bench-form">
               <form onSubmit={this.handleSubmit}>
                 <label>lat
                 <input type="text"/>
