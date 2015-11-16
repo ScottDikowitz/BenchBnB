@@ -23,5 +23,16 @@ var ApiUtil = window.ApiUtil = {
       }
     });
 
-  }
+  },
+  filterBenches: function(bounds){
+    $.ajax ({
+      url: 'api/benches',
+      type: 'GET',
+      dataType: 'json',
+      data: {bounds: bounds},
+      success: function(data) {
+        FilterActions.applyFilter(data);
+      }
+    });
+  },
 };

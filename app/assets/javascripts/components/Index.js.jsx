@@ -15,7 +15,6 @@ var Index = React.createClass ({
 
   _changedMark: function(){
     this.setState({marks: MarkStore.all()});
-
   },
 
   _changed: function(){

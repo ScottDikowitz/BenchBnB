@@ -22,7 +22,10 @@ var Map = React.createClass ({
                         "northEast":{"lat": northEast.lat().toString(), "lng": northEast.lng().toString()},
                         "southWest":{"lat": southWest.lat().toString(), "lng": southWest.lng().toString()}
                       };
-      ApiUtil.fetchBenches(mapBounds);
+      // ApiUtil.fetchBenches(mapBounds);
+      // debugger;
+      var filter = {mapBounds: mapBounds, min: 1, max: 12};
+      ApiUtil.filterBenches(filter);
       });
 
       this.map.addListener('click', function(e){
