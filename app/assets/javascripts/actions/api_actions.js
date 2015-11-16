@@ -11,6 +11,13 @@ ApiActions = {
       actionType: BenchConstants.MARKS_RECEIVED,
       marks: marks
     });
+  },
+
+  createBench: function(bench){
+    AppDispatcher.dispatch({
+      actionType: BenchConstants.CREATE_BENCH,
+      bench: bench
+    });
   }
 
 };

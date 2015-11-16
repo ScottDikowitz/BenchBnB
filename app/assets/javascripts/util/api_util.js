@@ -1,5 +1,3 @@
-
-
 var ApiUtil = window.ApiUtil = {
   fetchBenches: function(bounds){
     //make an api call using AJAX in here
@@ -13,4 +11,17 @@ var ApiUtil = window.ApiUtil = {
       }
     });
   },
+
+  createBench: function(bench){
+    $.ajax ({
+      url: 'api/benches',
+      type: 'POST',
+      dataType: 'json',
+      data: {bench: bench},
+      success: function(data) {
+        ApiActions.createBench(data);
+      }
+    });
+
+  }
 };

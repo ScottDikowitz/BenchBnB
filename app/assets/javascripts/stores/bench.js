@@ -28,8 +28,12 @@
 
   BenchStore.dispatcherID = AppDispatcher.register(function(payload){
       if(payload.actionType === BenchConstants.BENCHES_RECEIVED){
-          BenchStore.resetBenches(payload.benches);
-          BenchStore.emit(CHANGE_EVENT);
+        BenchStore.resetBenches(payload.benches);
+        BenchStore.emit(CHANGE_EVENT);
+      }
+      else if (payload.actionType === BenchConstants.CREATE_BENCH){
+        _benches.push(payload.bench);
+        BenchStore.emit(CHANGE_EVENT);
       }
     });
 
