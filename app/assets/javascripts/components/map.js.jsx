@@ -24,6 +24,13 @@ var Map = React.createClass ({
       ApiUtil.fetchBenches(mapBounds);
       });
 
+      this.map.addListener('click', function(e){
+        var lat = e.latLng.lat();
+        var lng = e.latLng.lng();
+        debugger;
+
+      });
+
     BenchStore.addChangeListener(this._changed);
   },
 
