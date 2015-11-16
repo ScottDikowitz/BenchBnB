@@ -5,6 +5,7 @@ var Search = React.createClass ({
     return <div>
             <Map/>
             <Index/>
+            <BenchForm/>
           </div>;
         }
 
