@@ -78,6 +78,10 @@ body{
   padding: 10px;
 }
 
+.filter {
+  text-align: center;
+}
+
 .create-bench-form > form textarea{
   margin-top: 10px;
   position: relative;

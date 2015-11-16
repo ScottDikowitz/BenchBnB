@@ -8,6 +8,10 @@ var Search = React.createClass ({
     FilterStore.addChangeListener(this._changed);
   },
 
+  componentWillUnmount: function(){
+    FilterStore.removeChangeListener(this._changed);
+  },
+
   _changed: function(){
     this.setState({filterParams: FilterStore.filterParams()});
   },
